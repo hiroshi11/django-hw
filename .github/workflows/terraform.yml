@@ -75,6 +75,7 @@ jobs:
     - name: copy ssh private key
       run: |
         echo "${{ secrets.VM_SSH_PRIVATE_KEY }}" > vm_id_rsa
+        chown 600 vm_id_rsa
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
