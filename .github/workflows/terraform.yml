@@ -68,6 +68,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
+    - name: TEST
+      run: echo "HOOOOST: " ${{ vars.RHOST }}
+
     - name: copy ssh private key
       run: |
         echo ${{ secrets.VM_SSH_PRIVATE_KEY }} > vm_id_rsa
